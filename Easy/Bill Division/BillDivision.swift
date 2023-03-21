@@ -13,18 +13,13 @@ func bonAppetit(bill: [Int], k: Int, b: Int) -> Void {
     // Write your code here
     var theBill = bill
     var everyOnePays: Int = 0
-    // let onlyBrianEats: Int = theBill[k]
     theBill.remove(at: k)
-    
+
     for item in theBill {
-        everyOnePays = everyOnePays + item
+        everyOnePays += item
     }
     everyOnePays = everyOnePays/2
-    if everyOnePays == b {
-        print("Bon Appetit")
-    } else {
-        print(b-everyOnePays)
-    }
+    print(everyOnePays == b ? "Bon Appetit" : "\(b-everyOnePays)")
 }
 
 guard let firstMultipleInputTemp = readLine()?.replacingOccurrences(of: "\\s+$", with: "", options: .regularExpression) else { fatalError("Bad input") }
